@@ -1,6 +1,4 @@
-package com.example.demo.domain.DTO;
-
-import org.springframework.cglib.core.Local;
+package com.example.demo.domain.dto;
 
 import java.time.LocalDateTime;
 

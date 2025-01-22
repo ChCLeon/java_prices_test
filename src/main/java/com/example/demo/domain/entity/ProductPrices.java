@@ -1,21 +1,25 @@
 package com.example.demo.domain.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "PRODUCT_PRICES")
+
 public class ProductPrices {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "brand_id")
     private Long brand_id;
+    @Column(name = "start_date")
     private LocalDateTime start_date;
+    @Column(name = "end_date")
     private LocalDateTime end_date;
+    @Column(name = "price_list")
     private Long price_list;
+    @Column(name = "product_id")
     private int product_id;
     private int priority;
     private float price;

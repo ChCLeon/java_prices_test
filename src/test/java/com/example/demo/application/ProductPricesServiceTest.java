@@ -37,7 +37,7 @@ class ProductPricesServiceTest {
 
     @Test
         //Test 1: petición a las 10:00 del día 14 del producto 35455   para la brand 1 (ZARA)
-    void getPricesByTest1() {
+    void test1ShouldReturnPriceAt10AMDay14() {
         LocalDateTime applicationDate = LocalDateTime.parse("2020-06-14T10:00:00");
         ProductPrices expectedPrice = createProductPriceDTO(1L, 1, 35455, 35.50f, 1L);
         when(productPricesRepository.findProductByPrice(eq(1L), eq(35455), eq(applicationDate)))
@@ -47,6 +47,19 @@ class ProductPricesServiceTest {
 
         assertEquals(35.50f, result.get().getPrice());
         assertEquals(1L, result.get().getPrice_list());
+
+    }
+
+    @Test
+    //Test 2: petición a las 16:00 del día 14 del producto 35455   para la brand 1 (ZARA)
+
+    void test2ShouldReturnPriceAt16PMDay14() {
+
+        LocalDateTime applicationDate = LocalDateTime.parse("2020-06-14T16:00:00");
+        ProductPrices expectedPrice = createProductPriceDTO(1L, 2, 35455, 25.45f, 2L);
+        when(productPricesRepository.findProductByPrice(eq(1L), eq(35455), eq(applicationDate)))
+                .thenReturn(List.of(expectedPrice));
+
 
     }
 

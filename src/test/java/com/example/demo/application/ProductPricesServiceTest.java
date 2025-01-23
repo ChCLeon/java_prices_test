@@ -59,7 +59,10 @@ class ProductPricesServiceTest {
         ProductPrices expectedPrice = createProductPriceDTO(1L, 2, 35455, 25.45f, 2L);
         when(productPricesRepository.findProductByPrice(eq(1L), eq(35455), eq(applicationDate)))
                 .thenReturn(List.of(expectedPrice));
+        Optional<ProductPrices> result = productPricesService.getPrice(1L, 35455, applicationDate);
 
+        assertEquals(25.45f, result.get().getPrice());
+        assertEquals(2L, result.get().getPrice_list());
 
     }
 

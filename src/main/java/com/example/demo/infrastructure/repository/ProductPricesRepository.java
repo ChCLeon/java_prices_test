@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface ProductPricesRepository  {
 
-    List<ProductPrices> findProductByPrice(Long brand_id, Long product_id, LocalDateTime applicationDate);
+    List<ProductPrices> findProductByPrice(Long brand_id, int product_id, LocalDateTime applicationDate);
 }

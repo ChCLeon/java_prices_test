@@ -18,7 +18,7 @@ public class ProductPrices {
     @Column(name = "end_date")
     private LocalDateTime end_date;
     @Column(name = "price_list")
-    private Long price_list;
+    private int price_list;
     @Column(name = "product_id")
     private int product_id;
     private int priority;
@@ -57,11 +57,11 @@ public class ProductPrices {
         this.end_date = end_date;
     }
 
-    public Long getPrice_list() {
+    public int getPrice_list() {
         return price_list;
     }
 
-    public void setPrice_list(Long price_list) {
+    public void setPrice_list(int price_list) {
         this.price_list = price_list;
     }
 

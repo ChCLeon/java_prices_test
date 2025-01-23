@@ -26,7 +26,7 @@ public class ProductPricesController {
     @GetMapping
     public ResponseEntity<ProductPrices> getPrice(
             @RequestParam Long brandId,
-            @RequestParam Long productId,
+            @RequestParam int productId,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime applicationDate) {
 
         return productPricesService.getPrice(brandId, productId, applicationDate)

@@ -18,7 +18,7 @@ public class ProductPricesService {
         this.productPricesRepository = productPricesRepository;
     }
 
-    public Optional<ProductPrices> getPrice(Long brand_id, Long product_id, LocalDateTime applicationDate) {
+    public Optional<ProductPrices> getPrice(Long brand_id, int product_id, LocalDateTime applicationDate) {
         List<ProductPrices> prices = productPricesRepository.findProductByPrice(brand_id, product_id, applicationDate);
         return prices.isEmpty() ? Optional.empty() : Optional.of(prices.get(0));
     }

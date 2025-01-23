@@ -31,4 +31,13 @@ class ProductPricesServiceTest {
         Mockito.when(productPricesRepository.findProductByPrice(brand_id,product_id,applicationDate)).thenReturn(productPricesList);
         assertEquals(productPricesList,List.of());
     }
+
+    @Test
+    //Test 1: petición a las 10:00 del día 14 del producto 35455   para la brand 1 (ZARA)
+    void getPricesByTest1(){
+        List<ProductPrices> productPricesList =new ArrayList<>();
+        Long brand_id = 1L;
+        Long product_id = 35455L;
+        LocalDateTime applicationDate = LocalDateTime.parse("2020-06-14T10:00:00");
+    }
 }
